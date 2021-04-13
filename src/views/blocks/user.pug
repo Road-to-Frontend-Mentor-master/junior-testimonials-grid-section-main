@@ -1,0 +1,7 @@
+mixin user(pictureUrl, authorName, profession, extension = ".jpg")
+  header.card__header.user
+    .user__left
+      img.user__picture(src="images/" + pictureUrl + extension, alt=authorName + " profile picture")
+    .user__right
+      p.user__author-name= authorName
+      p.user__profession= profession
