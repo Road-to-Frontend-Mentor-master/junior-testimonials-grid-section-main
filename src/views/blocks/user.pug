@@ -1,5 +1,5 @@
-mixin user(pictureUrl, authorName, profession, extension = ".jpg")
-  header.card__header.user
+mixin user(pictureUrl, authorName, profession, classModifier = "", extension = ".jpg")
+  header(class=`card__header user ${classModifier}`.trimRight())
     .user__left
       img.user__picture(src="images/" + pictureUrl + extension, alt=authorName + " profile picture")
     .user__right

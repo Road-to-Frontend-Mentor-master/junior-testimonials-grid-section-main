@@ -1,0 +1,27 @@
+@use "../config/variables" as *;
+
+.user {
+  display: flex;
+  align-items: center;
+
+  &__author-name {
+    color: var(--author-color, $dark-blue);
+  }
+
+  &__profession {
+    color: var(--profession-color, $grayish-blue);
+  }
+
+  &__left {
+    margin-right: 1rem;
+  }
+
+  &__picture {
+    border-radius: 50%;
+  }
+
+  &--is-light {
+    --author-color: $white;
+    --profession-color: #ffffffaa;
+  }
+}

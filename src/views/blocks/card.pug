@@ -1,5 +1,5 @@
-mixin card(title, comment)
-  article.card
+mixin card(title, comment, classModifier = "")
+  article(class=`card ${classModifier}`.trimRight())
     block
     h2.card__title= title
     blockquote.card__comment= comment

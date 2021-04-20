@@ -9,8 +9,13 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Frontend mentor
+    link(rel="stylesheet", href="css/styles.css")
+
+    // En pug podemos utilizar la sintaxis de HTML sin ningún problema
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
   body
     main
       each cardInfo in cardsInfo
-        +card(cardInfo.title, cardInfo.comment)
-          +user(cardInfo.header.pictureUrl, cardInfo.header.authorName, cardInfo.header.profession)
+        +card(cardInfo.title, cardInfo.comment, cardInfo.classModifier)
+          +user(cardInfo.header.pictureUrl, cardInfo.header.authorName, cardInfo.header.profession, cardInfo.header.modifierClass)

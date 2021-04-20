@@ -1,0 +1,17 @@
+@use "../config/variables" as *;
+
+* {
+  font-family: $primary-font;
+}
+
+body {
+  background-color: $light-gray;
+  padding: 1rem;
+}
+
+body,
+blockquote,
+h2,
+p {
+  margin: 0;
+}

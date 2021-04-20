@@ -1,0 +1,47 @@
+@use "../config/variables" as *;
+
+.card {
+  background-color: $white;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 7px;
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__comment {
+    color: var(--comment-color, $grayish-blue);
+
+    &--is-light {
+      --comment-color: #ffffffaa;
+    }
+  }
+
+  &--is-violet,
+  &--is-grayish-blue,
+  &--is-dark-blue {
+    color: $white;
+  }
+
+  &--is-violet {
+    background-color: $violet;
+  }
+
+  &--has-background-quotes {
+
+  }
+
+  &--is-grayish-blue {
+    background-color: $grayish-blue;
+  }
+
+  &--is-dark-blue {
+    background-color: $dark-blue;
+  }
+}
