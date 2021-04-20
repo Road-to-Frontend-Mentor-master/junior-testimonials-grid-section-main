@@ -1,10 +1,14 @@
 @use "../config/variables" as *;
+@use "../mixins/to" as *;
 
 .card {
   background-color: $white;
-  padding: 2rem;
-  margin-bottom: 1rem;
+  padding: 2rem 2.5rem;
   border-radius: 7px;
+
+  @include to($desktop) {
+    margin-bottom: 1rem;
+  }
 
   &__header {
     margin-bottom: 2rem;
@@ -17,10 +21,8 @@
 
   &__comment {
     color: var(--comment-color, $grayish-blue);
-
-    &--is-light {
-      --comment-color: #ffffffaa;
-    }
+    line-height: 1.5;
+    font-size: .9rem;
   }
 
   &--is-violet,
@@ -29,12 +31,18 @@
     color: $white;
   }
 
+  &--is-light {
+    --comment-color: #ffffffaa;
+  }
+
   &--is-violet {
     background-color: $violet;
   }
 
   &--has-background-quotes {
-
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 1rem;
   }
 
   &--is-grayish-blue {
@@ -43,5 +51,13 @@
 
   &--is-dark-blue {
     background-color: $dark-blue;
+  }
+
+  $area-names: ("daniel", "jonathan", "jeanette", "patrick", "kira");
+
+  @each $user in $area-names {
+    &--#{$user}{
+      grid-area: #{$user};
+    }
   }
 }
